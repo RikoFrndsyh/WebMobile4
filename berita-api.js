@@ -1,5 +1,5 @@
 function fetchBerita() {
-  const apiKey = '00810e259c452a39c96b72bcab06192d'; // Ganti dengan API key aslimu dari gnews.io
+  const apiKey = '34a98c1662134d0eb725485245187849';
   const url = `https://gnews.io/api/v4/top-headlines?category=technology&lang=id&country=id&apikey=${apiKey}`;
 
   fetch(url)
