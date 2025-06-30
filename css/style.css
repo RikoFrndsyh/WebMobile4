@@ -1,0 +1,74 @@
+/* Import Font dari Google Fonts (Opsional, tapi direkomendasikan) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variabel Warna untuk kemudahan kustomisasi */
+:root {
+  --primary-color: #0d6efd;
+  --bg-light-gray: #f8f9fa;
+  --font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Gaya Halaman Login --- */
+.login-page {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  height: 100vh;
+}
+
+.login-card {
+  /* Efek Glassmorphism */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Untuk Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+}
+
+.login-card .form-control {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+}
+
+.login-card .form-control:focus {
+  background-color: white;
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+.login-card label {
+  color: #555;
+}
+
+/* --- Gaya Halaman Dashboard --- */
+.dashboard-page {
+  background-color: var(--bg-light-gray);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main.container {
+  flex-grow: 1;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar .nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+/* Gaya Tabel yang Lebih Bersih */
+.table thead {
+  background-color: #f1f5f9;
+  font-weight: 600;
+  color: #334155;
+  border-bottom: 2px solid #e2e8f0;
+}
