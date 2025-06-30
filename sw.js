@@ -1,7 +1,8 @@
 self.addEventListener("install", event => {
   event.waitUntil((async () => {
     const cache = await caches.open("siakad-riko-cache");
-    await cache.addAll([
+    try {
+      await cache.addAll([
       "/",
       "./index.html",
       "./beranda.html",
@@ -15,8 +16,12 @@ self.addEventListener("install", event => {
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     ]);
+    } catch (err) {
+      console.error("Gagal menyimpan cache:", err);
+    }
   })());
 });
+
 
 self.addEventListener("fetch", event => {
   event.respondWith(
