@@ -2,38 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - SIAKAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Membuat tampilan responsif di perangkat mobile -->
+  <title>Login - SIAKAD</title> <!-- Judul halaman pada tab browser -->
+
+  <!-- Mengimpor Bootstrap 5.3.7 untuk styling responsif -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Menghubungkan file CSS kustom -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Menghubungkan file manifest.json untuk konfigurasi PWA -->
   <link rel="manifest" href="manifest.json" />
+
+  <!-- Menghubungkan file JavaScript utama untuk fungsionalitas PWA -->
   <script src="app.js" defer></script>
 </head>
-<body class="login-page">
+<body class="login-page"> <!-- Menandai halaman login dengan class khusus -->
+
+  <!-- Kontainer utama halaman login, menggunakan Bootstrap flexbox untuk center content -->
   <div class="container d-flex align-items-center justify-content-center min-vh-100">
-    <div class="col-md-6 col-lg-5 col-xl-4">
-      <div class="card login-card shadow-lg border-0">
-        <div class="card-body p-4 p-md-5">
+    <div class="col-md-6 col-lg-5 col-xl-4"> <!-- Ukuran kolom pada berbagai breakpoint -->
+      <div class="card login-card shadow-lg border-0"> <!-- Kartu login dengan bayangan dan tanpa border -->
+        <div class="card-body p-4 p-md-5"> <!-- Isi kartu dengan padding -->
+          
+          <!-- Header judul login -->
           <div class="text-center mb-4">
             <h3 class="mt-2 mb-4 fw-bold text-primary">SIAKAD Login</h3>
           </div>
+
+          <!-- Form login -->
           <form>
+            <!-- Input NIM -->
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="nim" placeholder="Masukkan NIM" required>
               <label for="nim">NIM</label>
             </div>
+
+            <!-- Input Password -->
             <div class="form-floating mb-4">
               <input type="password" class="form-control" id="password" placeholder="Masukkan Kata Sandi" required>
               <label for="password">Kata Sandi</label>
             </div>
+
+            <!-- Tombol Masuk -->
             <div class="d-grid">
-              <a href="beranda.html" class="btn btn-primary btn-lg rounded-pill">Masuk</a>
+              <a href="beranda.html" class="btn btn-primary btn-lg rounded-pill">Masuk</a> <!-- Simulasi login (belum pakai auth) -->
             </div>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Script bundle Bootstrap untuk interaksi -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
