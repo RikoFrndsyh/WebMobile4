@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mata Kuliah - SIAKAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsif di perangkat mobile -->
+  <title>Mata Kuliah - SIAKAD</title> <!-- Judul halaman yang muncul di tab browser -->
 
+  <!-- Mengimpor Bootstrap untuk styling dan layout responsif -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="manifest" href="manifest.json" />
-  <script src="app.js" defer></script>
-  <script src="matkul-db.js" defer></script>
 
+  <!-- Menghubungkan file CSS kustom -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- File manifest.json untuk mendukung PWA -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- File JavaScript utama untuk PWA dan fitur tambahan -->
+  <script src="app.js" defer></script>
+
+  <!-- File JavaScript untuk pengelolaan IndexedDB mata kuliah -->
+  <script src="matkul-db.js" defer></script>
 </head>
-<body class="dashboard-page">
+
+<body class="dashboard-page"> <!-- Class halaman dashboard -->
+
+  <!-- Navigasi utama (Navbar) -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
-      <a class="navbar-brand text-primary fw-bold" href="#">SIAKAD UTDI</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand text-primary fw-bold" href="#">SIAKAD UTDI</a> <!-- Nama aplikasi -->
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"> <!-- Toggle menu untuk mobile -->
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto"> <!-- Menu navigasi -->
           <li class="nav-item"><a class="nav-link" href="beranda.html">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Mata Kuliah</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Mata Kuliah</a></li> <!-- Halaman aktif -->
           <li class="nav-item"><a class="nav-link text-danger" href="index.html">Logout</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  <!-- Konten utama -->
   <main class="container my-5">
-    <h4 class="fw-bold mb-4">Daftar Lengkap Mata Kuliah Semester Ini</h4>
+    <h4 class="fw-bold mb-4">Daftar Lengkap Mata Kuliah Semester Ini</h4> <!-- Judul konten utama -->
+
+    <!-- Kartu berisi tabel daftar mata kuliah -->
     <div class="card border-0 shadow-sm">
       <div class="card-body p-4">
-        <div class="table-responsive">
-          <table class="table align-middle">
+        <div class="table-responsive"> <!-- Tabel dapat discroll di layar kecil -->
+          <table class="table align-middle"> <!-- Tabel daftar mata kuliah -->
             <thead>
               <tr>
                 <th>Kode</th>
@@ -43,14 +57,14 @@
                 <th>Jadwal</th>
               </tr>
             </thead>
-            <tbody id="matkulBody"></tbody>
+            <tbody id="matkulBody"></tbody> <!-- Isi tabel akan diisi lewat JavaScript dari IndexedDB -->
           </table>
         </div>
       </div>
     </div>
   </main>
 
-
+  <!-- Script Bootstrap Bundle untuk fitur interaktif -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
