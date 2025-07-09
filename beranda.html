@@ -1,26 +1,39 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Mendefinisikan bahwa ini adalah dokumen HTML5 -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /> <!-- Menentukan encoding karakter -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Membuat halaman responsif pada perangkat mobile -->
   <title>Dashboard Mahasiswa - SIAKAD</title>
+  
+  <!-- Menggunakan Bootstrap 5.3.7 untuk styling responsif -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- File CSS kustom -->
   <link rel="stylesheet" href="css/style.css">
+  
+  <!-- File manifest untuk konfigurasi PWA -->
   <link rel="manifest" href="manifest.json" />
+  
+  <!-- File JavaScript utama untuk PWA -->
   <script src="app.js" defer></script>
+  
+  <!-- File JavaScript untuk mengelola IndexedDB mata kuliah -->
   <script src="matkul-db.js" defer></script>
+  
+  <!-- File JavaScript untuk memuat data berita dari API -->
   <script src="berita-api.js" defer></script>
-
 </head>
+
 <body class="dashboard-page">
+  <!-- Navigasi utama -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
-      <a class="navbar-brand text-primary fw-bold" href="#">SIAKAD UTDI</a>
+      <a class="navbar-brand text-primary fw-bold" href="#">SIAKAD UTDI</a> <!-- Logo atau nama aplikasi -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span> <!-- Ikon menu toggle untuk tampilan mobile -->
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto"> <!-- Menu navigasi -->
           <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
           <li class="nav-item"><a class="nav-link" href="#">KRS</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Nilai</a></li>
@@ -31,13 +44,14 @@
   </nav>
 
   <main class="container my-4 my-md-5">
-    <!-- Informasi dan Ringkasan Akademik -->
+    <!-- Header sambutan -->
     <div class="row align-items-center mb-4">
       <div class="col-md-9">
-        <h3 class="fw-bold">Selamat Datang, Raihan Riko!</h3>
+        <h3 class="fw-bold">Selamat Datang, Raihan Riko!</h3> <!-- Nama mahasiswa -->
         <p class="text-muted">Berikut adalah ringkasan akademismu.</p>
       </div>
       <div class="col-md-3 text-md-end">
+        <!-- Foto profil mahasiswa -->
         <img src="img/riko.png" class="img-fluid rounded-circle shadow-sm" alt="Foto Mahasiswa" style="width: 90px; height: 90px; object-fit: cover;">
       </div>
     </div>
@@ -58,26 +72,24 @@
         </div>
       </div>
 
-      <!-- IPK -->
+      <!-- IPK Saat Ini -->
       <div class="col-lg-5">
         <div class="card text-center text-white h-100 border-0 shadow-sm" style="background: linear-gradient(45deg, #0d6efd, #0dcaf0);">
           <div class="card-body d-flex flex-column justify-content-center">
             <h5 class="card-title">IPK Saat Ini</h5>
-            <h1 class="display-3 fw-bold my-2">3.75</h1>
-            <p class="mb-0">Total SKS Ditempuh: 120</p>
+            <h1 class="display-3 fw-bold my-2">3.75</h1> <!-- Nilai IPK -->
+            <p class="mb-0">Total SKS Ditempuh: 120</p> <!-- Total SKS -->
           </div>
         </div>
       </div>
 
-
-
-      <!-- Mata Kuliah Semester Ini -->
+      <!-- Daftar Mata Kuliah Semester Ini -->
       <div class="col-12">
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4">
             <h5 class="card-title fw-bold mb-3 d-flex justify-content-between align-items-center">
               Mata Kuliah Semester Ini
-              <a href="matkul.html" class="btn btn-sm btn-outline-primary">Lihat Semua</a>
+              <a href="matkul.html" class="btn btn-sm btn-outline-primary">Lihat Semua</a> <!-- Tombol menuju halaman detail matkul -->
             </h5>
             <div class="table-responsive">
               <table class="table align-middle">
@@ -89,31 +101,33 @@
                     <th>Jadwal</th>
                   </tr>
                 </thead>
-                <tbody id="matkulBody"></tbody>
+                <tbody id="matkulBody"></tbody> <!-- Data akan diisi melalui JavaScript dari IndexedDB -->
               </table>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Berita -->
+      <!-- Daftar Berita dan Informasi -->
       <div class="col-12">
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4">
             <h5 class="card-title fw-bold mb-3">Berita & Informasi</h5>
             <div id="beritaList" class="d-flex flex-column gap-3">
-          <div>Memuat berita terbaru...</div>
+              <div>Memuat berita terbaru...</div> <!-- Akan digantikan oleh data dari berita-api.js -->
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </main>
 
+  <!-- Footer bawah -->
   <footer class="text-center py-4 mt-auto">
     <p class="text-muted mb-0">© 2025 RaihanRiko | SIAKAD</p>
   </footer>
 
+  <!-- Script Bootstrap bundle untuk interaktivitas (termasuk collapse menu) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
